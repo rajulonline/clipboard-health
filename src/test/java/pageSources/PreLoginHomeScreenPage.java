@@ -157,7 +157,10 @@ public class PreLoginHomeScreenPage {
     * @param  none
     * @return this prelogin screen page
     */
-    public PreLoginHomeScreenPage validateAboutItemForSelectedProduct() {  
+    public PreLoginHomeScreenPage validateAboutItemForSelectedProduct() {
+        WebElement hamburgerIconElement = new WebDriverWait(driver, Duration.ofSeconds(5))
+        .until(driver ->  driver.findElement(By.xpath("//div[@id='feature-bullets']")));
+
         List<WebElement> elements = driver.findElements(By.xpath("//div[@id='feature-bullets']"));        
         if (elements.size() > 0) {
             //Can iterate the list if you expect more than one div of type someDiv.
